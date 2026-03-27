@@ -241,9 +241,17 @@ function ProjectShowcase({ project, onOpen }) {
               </h3>
             </div>
             <div className="mt-5 h-[190px] overflow-hidden bg-[linear-gradient(135deg,#d8ddd8,#c0c8bf)]">
-              <div className="flex h-full items-end justify-center">
-                <div className="h-[88%] w-[78%] rounded-t-[160px] bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.6),rgba(255,255,255,0.12)),linear-gradient(180deg,#4c5f4a,#1f2a22)]" />
-              </div>
+              {project.imageUrl ? (
+                <img
+                  src={project.imageUrl}
+                  alt={project.title}
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <div className="flex h-full items-end justify-center">
+                  <div className="h-[88%] w-[78%] rounded-t-[160px] bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.6),rgba(255,255,255,0.12)),linear-gradient(180deg,#4c5f4a,#1f2a22)]" />
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -281,7 +289,7 @@ function SectionScroll({ href, label = "Scroll Down", className = "" }) {
     <a
       href={href}
       aria-label={label}
-      className={`absolute bottom-10 left-0 hidden lg:flex lg:flex-col lg:items-center lg:gap-6 ${className}`}
+      className={`absolute bottom-10 left-0 z-30 hidden lg:flex lg:flex-col lg:items-center lg:gap-6 ${className}`}
     >
       <p className="rotate-180 text-[11px] font-semibold uppercase tracking-[0.28em] text-black/65 [writing-mode:vertical-rl]">
         Scroll Down

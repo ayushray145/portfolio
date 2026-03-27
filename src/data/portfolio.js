@@ -94,6 +94,7 @@ export const projectCards = [
       "This project explores a landing and product experience for a chatroom focusing on developer's day to day problems, An integrated AI-assistant provides CODE REVIEW facility to the developers and help them communicate and ship code faster and more efficiently than ever.",
     technologies: ["React", "Tailwind CSS", "Responsive UI", "UX Writing"],
     websiteUrl: "https://devrooms-chatbot.vercel.app/",
+    imageUrl: "/devroomlanding.png",
     accent: "showcase.",
   },
   {
@@ -106,6 +107,7 @@ export const projectCards = [
       "This project is designed as a personal showcase website. It focuses on storytelling, clean navigation, modular sections, and a flexible frontend structure that can grow into a more complete case study driven portfolio.",
     technologies: ["Vite", "React", "Tailwind CSS", "Component Architecture"],
     websiteUrl: "https://example.com",
+    imageUrl: "/project-image-2.jpg",
     accent: "portfolio.",
   },
 ];
