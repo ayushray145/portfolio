@@ -21,6 +21,7 @@ function HeroSection({ profile, socialLinks }) {
             </a>
             <a
               href={profile.resumeUrl}
+              download="Ayush-Kumar-Resume.pdf"
               className="rounded-full border border-ink/10 bg-cloud px-6 py-3 text-sm font-semibold text-ink hover:border-clay hover:text-clay"
             >
               View Resume
@@ -57,4 +58,3 @@ function HeroSection({ profile, socialLinks }) {
 }
 
 export default HeroSection;
-

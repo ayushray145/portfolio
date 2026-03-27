@@ -2,7 +2,7 @@ export const profile = {
   name: "Ayush Kumar",
   role: "App/Web Developer",
   email: "ayushray145@gmail.com",
-  resumeUrl: "#",
+  resumeUrl: "/ayushkumarFINAL.pdf",
   portraitUrl:
     "/WhatsApp_Image_2025-11-27_at_23.40.59_06dcad2d-removebg-preview.png",
   bioStart: "Hello! I'm Ayush Kumar. I'm a",

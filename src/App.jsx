@@ -378,6 +378,7 @@ function App() {
               <div className="mt-8 flex flex-wrap items-end justify-center gap-6">
                 <a
                   href={profile.resumeUrl}
+                  download="Ayush-Kumar-Resume.pdf"
                   className="inline-flex h-10 items-center gap-2.5 border-b border-black pb-1 text-base font-medium text-black"
                 >
                   Download Cv
