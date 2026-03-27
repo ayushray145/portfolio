@@ -152,7 +152,7 @@ function ServiceIcon({ type, inverted }) {
   );
 }
 
-function ServiceCard({ card }) {
+function ServiceCard({ card, onOpen }) {
   const cardClass = card.inverted
     ? "border-black bg-[#171717] text-white"
     : "border-black/30 bg-transparent text-black";
@@ -168,14 +168,48 @@ function ServiceCard({ card }) {
           {card.title}
         </h3>
       </div>
-      <a
-        href={card.href}
+      <button
+        type="button"
+        onClick={() => onOpen(card)}
         className={`inline-flex items-center gap-3 text-xs font-semibold tracking-[0.14em] ${linkClass}`}
       >
         <span>READ MORE</span>
         <span className="text-base">→</span>
-      </a>
+      </button>
     </article>
+  );
+}
+
+function ServiceDetailModal({ card, onClose }) {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 px-6 py-8 backdrop-blur-[2px]">
+      <div className="relative w-full max-w-2xl border border-black/15 bg-ivory p-8 shadow-[0_24px_80px_rgba(0,0,0,0.16)] sm:p-10">
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute right-5 top-5 text-sm font-semibold uppercase tracking-[0.14em] text-black/55"
+        >
+          Close
+        </button>
+
+        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-black/55">Service Details</p>
+        <h3 className="mt-4 max-w-xl font-display text-[2.2rem] font-bold leading-[1.02] tracking-[-0.04em] text-black sm:text-[2.8rem]">
+          {card.title}
+        </h3>
+        <p className="mt-6 text-[15px] leading-8 text-black/82">{card.summary}</p>
+
+        <div className="mt-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-black/55">Languages &amp; Tools</p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            {card.tools.map((item) => (
+              <span key={item} className="border border-black/20 px-4 py-2 text-sm font-medium text-black">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -304,6 +338,7 @@ function SectionScroll({ href, label = "Scroll Down", className = "" }) {
 
 function App() {
   const [activeProject, setActiveProject] = useState(null);
+  const [activeService, setActiveService] = useState(null);
 
   return (
     <div className="landing-shell min-h-screen bg-ivory text-black">
@@ -404,7 +439,11 @@ function App() {
 
             <div className="mt-12 grid gap-5 lg:grid-cols-3">
               {serviceCards.map((card) => (
-                <ServiceCard key={card.title} card={card} />
+                <ServiceCard
+                  key={card.title}
+                  card={card}
+                  onOpen={setActiveService}
+                />
               ))}
             </div>
           </div>
@@ -505,6 +544,10 @@ function App() {
             </div>
           </div>
         </div>
+      ) : null}
+
+      {activeService ? (
+        <ServiceDetailModal card={activeService} onClose={() => setActiveService(null)} />
       ) : null}
     </div>
   );

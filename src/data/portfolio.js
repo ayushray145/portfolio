@@ -14,12 +14,12 @@ export const heroCards = [
   {
     title: "My Projects",
     description: "See all of the project I have done.",
-    href: "#",
+    href: "#projects",
   },
   {
     title: "About Me",
     description: "Learn about what i do",
-    href: "#",
+    href: "#education",
   },
   {
     title: "Contact me",
@@ -57,22 +57,31 @@ export const servicesIntro = {
 
 export const serviceCards = [
   {
-    title: "UI-UX CREATIVE DESIGN",
+    title: "APP DEVELOPEMENT",
     type: "design",
     href: "#",
     inverted: true,
+    summary:
+      "I build Android and cross-platform app interfaces with practical architecture, responsive UI patterns, and a strong focus on usability.",
+    tools: ["Java", "Kotlin", "Flutter", "Android Studio"],
   },
   {
-    title: "VISUAL GRAPHIC DESIGN",
+    title: "FULL-STACK WEB DEVELOPEMENT",
     type: "monitor",
     href: "#",
     inverted: false,
+    summary:
+      "I develop full-stack web applications with clean frontend structure, scalable backend logic, and smooth integration between APIs and UI.",
+    tools: ["React", "Node.js", "Express", "MongoDB"],
   },
   {
-    title: "STRATEGY & DIGITAL MARKETING",
+    title: "UI/UX DESIGNER",
     type: "network",
     href: "#",
     inverted: false,
+    summary:
+      "I design interfaces that are visually clean, intuitive to navigate, and aligned with user goals through practical design thinking.",
+    tools: ["Figma", "Wireframing", "User Flows", "Prototyping"],
   },
 ];
 
