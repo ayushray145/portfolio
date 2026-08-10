@@ -51,3 +51,4 @@ npm run build
 3. Keep the detected framework as `Vite`.
 4. Deploy.
 
+..
