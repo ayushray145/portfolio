@@ -134,7 +134,7 @@ export const educationCards = [
     degree: "Bachelor of Technology",
     institute: "KIIT University",
     detail: "Computer Science and Engineering",
-    cgpa: "CGPA - 8.05/10",
+    cgpa: "CGPA - 8.12/10",
     duration: "2023 - 2027",
     inverted: false,
   },
